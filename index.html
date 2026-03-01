@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Star | MyFans</title>
+    <style>
+        :root { --blue: hsl(123, 98%, 51%); --dark: #1a1a1a; }
+        body { font-family: 'Segoe UI', sans-serif; margin: 0; background: #fafafa; }
+        nav { background: white; padding: 15px; border-bottom: 1px solid #ddd; position: sticky; top: 0; display: flex; justify-content: space-between; }
+        .container { max-width: 500px; margin: 20px auto; padding: 10px; }
+        .profile-header { background: white; border-radius: 15px; overflow: hidden; border: 1px solid #ddd; }
+        .banner { height: 120px; background: linear-gradient(45deg, #00aff0, #0056b3); }
+        .avatar { width: 80px; height: 80px; border-radius: 50%; border: 4px solid white; margin-top: -40px; margin-left: 20px; background: #eee; }
+        .info { padding: 15px; }
+        .post { background: white; margin-top: 20px; border-radius: 10px; border: 1px solid #ddd; padding: 15px; }
+        .blurred-media { 
+            width: 100%; height: 300px; background: #333; border-radius: 8px; 
+            display: flex; align-items: center; justify-content: center;
+            filter: blur(20px); transition: 0.5s;
+        }
+        .btn-pay { 
+            background: var(--blue); color: white; border: none; width: 100%; 
+            padding: 12px; border-radius: 25px; font-weight: bold; cursor: pointer; margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <b style="color: var(--blue)">MYFANS</b>
+        <span>👤 Mon Compte</span>
+    </nav>
+
+    <div class="container">
+        <div class="profile-header">
+            <div class="banner"></div>
+            <div class="avatar"></div>
+            <div class="info">
+                <h2 style="margin:0">yannck Digital 🔥</h2>
+                <p style="color: #f1071b">Abonne-toi pour voir mes contenus exclusifs.</p>
+            </div>
+        </div>
+
+        <div class="post">
+            <div id="media-container" class="blurred-media">
+                <span style="color: white; filter: blur(0px) !important;">🔒 CONTENU PRIVÉ</span>
+            </div>
+            <button id="pay-button" class="btn-pay" onclick="lancerPaiement()">
+                S'ABONNER (5.000 FCFA / MOIS)
+            </button>
+        </div>
+    </div>
+
+    <script>
+        async function lancerPaiement() {
+            const btn = document.getElementById('pay-button');
+            btn.innerText = "Chargement...";
+            
+            const res = await fetch('/payer', { method: 'POST' });
+            const data = await res.json();
+            
+            if(data.success) {
+                // Simulation de réussite
+                document.getElementById('media-container').style.filter = "none";
+                document.getElementById('media-container').innerHTML = "<img src='https://picsum.photos/500/300' style='width:100%; border-radius:8px;'>";
+                btn.style.display = "none";
+                alert("Bravo ! Accès débloqué.");
+            }
+        }
+    </script>
+</body>
+</html>
