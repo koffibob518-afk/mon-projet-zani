@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Premium Star | MyFans</title>
+    <title>Premium Star | ZANI</title>
     <style>
         :root { --blue: hsl(123, 98%, 51%); --dark: #1a1a1a; }
         body { font-family: 'Segoe UI', sans-serif; margin: 0; background: #fafafa; }
@@ -70,3 +70,29 @@
     </script>
 </body>
 </html>
+<style>
+  .galerie-zani {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Crée la grille */
+    gap: 15px; /* Espace entre les photos */
+    padding: 20px;
+  }
+  .galerie-zani img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover; /* Recadre proprement comme sur Freepik */
+    border-radius: 15px; /* Bords arrondis */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transition: transform 0.3s;
+  }
+  .galerie-zani img:hover {
+    transform: scale(1.02); /* Petit effet de zoom au survol */
+  }
+</style>
+
+<div class="galerie-zani">
+  <img src="photo1.jpg" alt="Photo 1">
+  <img src="photo2.jpg" alt="Photo 2">
+  <img src="photo3.jpg" alt="Photo 3">
+  <img src="photo4.jpg" alt="Photo 4">
+</div>
