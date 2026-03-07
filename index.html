@@ -137,7 +137,7 @@
         <source src="votre-video.mp4" type="video/mp4">
         Votre navigateur ne supporte pas la vidéo.
     </video>
-    <div style="margin-top:15px;">
+    <source src="episode1.mp4" type="video/mp4">
         <h3 id="titre-lecture">Lecture en cours...</h3>
         <button onclick="payer300()" style="background:#f47521; color:black; padding:15px 30px; border:none; border-radius:5px; font-weight:bold; cursor:pointer;">
             DÉBLOQUER L'ÉPISODE (300F via WAVE)
@@ -147,12 +147,6 @@
 
 <script>
 function payer300() {
-    // Affiche le lecteur vidéo
-    document.getElementById('lecteur-video').style.display = 'block';
-    
-    // Alerte pour le paiement
-    alert("Accès limité ! Veuillez payer 300 FCFA via Wave pour débloquer l'épisode complet.");
-    
-    // Optionnel : faire défiler la page vers le lecteur
-    window.scrollTo(0, 0);
+    // Redirection vers le paiement Wave
+    window.location.href = "https://pay.wave.com/ton-lien-ici"; 
 }
