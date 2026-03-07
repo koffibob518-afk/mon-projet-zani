@@ -147,7 +147,12 @@
 
 <script>
 function payer300() {
-    alert("Redirection vers Wave pour le paiement de 300 FCFA...");
-    // Ici on mettra le lien vers ton Wave Business plus tard
+    // Affiche le lecteur vidéo
+    document.getElementById('lecteur-video').style.display = 'block';
+    
+    // Alerte pour le paiement
+    alert("Accès limité ! Veuillez payer 300 FCFA via Wave pour débloquer l'épisode complet.");
+    
+    // Optionnel : faire défiler la page vers le lecteur
+    window.scrollTo(0, 0);
 }
-</script>
