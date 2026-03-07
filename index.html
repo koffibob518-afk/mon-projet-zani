@@ -32,7 +32,7 @@
         }
 
         .btn-premium {
-            background-color: #f47521;
+            background-color: #64f421;
             color: black;
             padding: 10px 20px;
             border-radius: 5px;
@@ -90,8 +90,8 @@
             position: absolute;
             top: 10px;
             right: 10px;
-            background-color: #f47521;
-            color: black;
+            background-color: #f4c321;
+            color: rgb(252, 16, 16);
             padding: 2px 8px;
             font-size: 12px;
             font-weight: bold;
@@ -132,3 +132,22 @@
 
 </body>
 </html>
+<div id="lecteur-video" style="display:none; background:#000; padding:20px; text-align:center;">
+    <video id="maVideo" width="100%" controls style="max-width:800px; border:2px solid #f47521;">
+        <source src="votre-video.mp4" type="video/mp4">
+        Votre navigateur ne supporte pas la vidéo.
+    </video>
+    <div style="margin-top:15px;">
+        <h3 id="titre-lecture">Lecture en cours...</h3>
+        <button onclick="payer300()" style="background:#f47521; color:black; padding:15px 30px; border:none; border-radius:5px; font-weight:bold; cursor:pointer;">
+            DÉBLOQUER L'ÉPISODE (300F via WAVE)
+        </button>
+    </div>
+</div>
+
+<script>
+function payer300() {
+    alert("Redirection vers Wave pour le paiement de 300 FCFA...");
+    // Ici on mettra le lien vers ton Wave Business plus tard
+}
+</script>
