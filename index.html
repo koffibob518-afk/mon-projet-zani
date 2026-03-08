@@ -139,14 +139,17 @@
     </video>
     <source src="episode1.mp4" type="video/mp4">
         <h3 id="titre-lecture">Lecture en cours...</h3>
-        <button onclick="payer300()" style="background:#f47521; color:black; padding:15px 30px; border:none; border-radius:5px; font-weight:bold; cursor:pointer;">
-            DÉBLOQUER L'ÉPISODE (300F via WAVE)
+        <button onclick="payer200()" style="background:#f47521; color:black; padding:15px 30px; border:none; border-radius:5px; font-weight:bold; cursor:pointer;">
+            S'ABONNER (200F / MOIS)
         </button>
     </div>
 </div>
 
 <script>
-function payer300() {
-    // Redirection vers le paiement Wave
-    window.location.href = "https://pay.wave.com/ton-lien-ici"; 
+function payerMensuel() {
+    // 1. On informe l'utilisateur
+    alert("Vous allez être redirigé vers Wave pour votre abonnement mensuel de 200 FCFA.");
+    
+    // 2. Ton nouveau lien Wave Business configuré à 200F
+    window.location.href = "https://pay.wave.com/ton-nouveau-lien-200F"; 
 }
