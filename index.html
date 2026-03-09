@@ -100,15 +100,47 @@
     </style>
 </head>
 <body>
+    <header>
+        </header>
 
-<header>
-    <div class="logo">ZANIR</div>
-    <a href="#" class="btn-premium">S'ABONNER (200F/MOIS)</a>
-</header>
+    <div class="container">
+        <h2>Dernières Sorties</h2>
+        <div class="rangee-animes">
+            <div class="card-anime" onclick="payerMensuel()">
+                <span class="badge-premium">NOUVEAU</span>
+                <img src="Blue Miburo.jfif.jpg" alt="Nouveau">
+                <div class="titre-anime">BLUE MIBURO</div>
+                <div style="font-size: 12px; color: #a0a0a0; padding: 5px;">Épisode 1 disponible</div>
+            </div>
+        </div>
+    <div class="card-anime" onclick="payerMensuel()">
+    <span class="badge-premium">PREMIUM</span>
+    <img src="image-anime.jfif" alt="Nouvel Anime">
+    <div class="titre-anime">NOM DE L'ANIME</div>
+    <div style="font-size: 12px; color: #a0a0a0; padding: 5px;">Sous-titrage | VF</div>
+</div>
+    <h2 style="color: white; width: 100%;">SAISON 1</h2>
+    <div class="card-anime" onclick="payerMensuel()">
+        <img src="L'Attaque des Titans.jfif" alt="Anime 1">
+        <div class="titre-anime">L'Attaque des Titans</div>
+    </div>
 
-<div class="container">
-    <h2>Dernières Sorties</h2>
-    
+    <h2 style="color: white; width: 100%;">SAISON 2</h2>
+    <div class="card-anime" onclick="payerMensuel()">
+        <img src="Tokyo revengers.jfif" alt="Anime 2">
+        <div class="titre-anime">Tokyo Revengers</div>
+    </div>
+
+</div> ```
+
+---
+
+### 💡 Pourquoi ça marche ?
+* En mettant tes `card-anime` dans des `div` séparés par des titres `<h2>`, tu crées naturellement des rangées distinctes.
+* Le `display: flex` dans le CSS s'assure que chaque série d'animes reste bien sur sa ligne.
+* Attention : si ton code affiche une erreur "Problème", vérifie bien que tu as le même nombre de `<div>` ouverts et fermés.
+
+**Est-ce que tu vois tes deux rangées (Saison 1 et Saison 2) bien séparées sur ton écran après avoir fait ce changement ?**
     <div class="grid-anime">
         <div class="card-anime"onclick="payerMensuel()">
             <span class="badge-premium">PREMIUM</span>
@@ -147,5 +179,5 @@
 
 <script>
 function payerMensuel() {
-    alert("Le système de paiement est en cours de maintenance. Il sera disponible dès demain. Merci de votre patience !");
+    window.location.href("Le système de paiement est en cours de maintenance. Il sera disponible dès demain. Merci de votre patience !");
 }
